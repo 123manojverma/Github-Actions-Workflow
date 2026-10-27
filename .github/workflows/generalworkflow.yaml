@@ -22,4 +22,3 @@ jobs:
       - name: Run Build or Tests
         run: |
           echo "Running general tasks..."
-          # npm install && npm test
