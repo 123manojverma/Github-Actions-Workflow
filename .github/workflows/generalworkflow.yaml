@@ -1,0 +1,25 @@
+name: General Branch Workflow
+
+# Triggers the workflow on push or pull request events for ANY branch
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the code from the branch that triggered the event
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Step 2: Dynamically print the current branch name (for verification)
+      - name: Log Branch Name
+        run: echo "Executing workflow on branch ${{ github.ref_name }}"
+
+      # Step 3: Add your build/test commands here
+      - name: Run Build or Tests
+        run: |
+          echo "Running general tasks..."
+          # npm install && npm test
